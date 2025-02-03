@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="hu">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <title>Teszt</title>
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .progress-bar {
+            transition: width 0.4s;
+        }
+
+        .card-header {
+            font-weight: bold;
+            background-color: #007bff;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Online Teszt</h1>
+        <p class="text-center text-muted">Válaszd ki a helyes válaszokat, majd küldd el a tesztet!</p>
+
+        <!-- Progress Bar -->
+        <div class="progress mb-4">
+            <div class="progress-bar progress-bar-striped progress-bar-animated" id="progress-bar" role="progressbar"
+                aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div>
+        </div>
+
+        <!-- Teszt kérdések -->
+        <form id="quiz-form">
+            <div class="row">
+                <!-- Kérdés 1 -->
+                
+
+                <div class="col-md-6 mb-3">
+                    <div class="card">
+                        <div class="card-header">1. Melyik HTML elem NEM blokkszintű?</div>
+                        <div class="card-body">
+                            <div>
+                                <input type="radio" name="q1" value="0" id="q1-a">
+                                <label for="q1-a">&lt;p&gt;</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="q1" value="0" id="q1-b">
+                                <label for="q1-b">&lt;div&gt;</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="q1" value="1" id="q1-c">
+                                <label for="q1-c">&lt;span&gt;</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 mb-3">
+                    <div class="card">
+                        <div class="card-header">2. Melyik HTML elem nem létezik?</div>
+                        <div class="card-body">
+                            <div>
+                                <input type="radio" name="q2" value="0" id="q2-a">
+                                <label for="q2-a">&lt;article&gt;</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="q2" value="0" id="q2-b">
+                                <label for="q2-b">&lt;section&gt;</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="q2" value="1" id="q2-c">
+                                <label for="q2-c">&lt;container&gt;</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 mb-3">
+                    <div class="card">
+                        <div class="card-header">3. Melyik a helyes CSS szintaxis?</div>
+                        <div class="card-body">
+                            <div>
+                                <input type="radio" name="q3" value="1" id="q3-a">
+                                <label for="q3-a">color: red;</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="q3" value="0" id="q3-b">
+                                <label for="q3-b">color = red;</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="q3" value="0" id="q3-c">
+                                <label for="q3-c">color -> red;</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 mb-3">
+                    <div class="card">
+                        <div class="card-header">4. Mit ad vissza a typeof null?</div>
+                        <div class="card-body">
+                            <div>
+                                <input type="radio" name="q4" value="0" id="q4-a">
+                                <label for="q4-a">null</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="q4" value="1" id="q4-b">
+                                <label for="q4-b">object</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="q4" value="0" id="q4-c">
+                                <label for="q4-c">undefined</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 mb-3">
+                    <div class="card">
+                        <div class="card-header">5. Mit ad vissza a következő kód? `0.1 + 0.2 === 0.3`</div>
+                        <div class="card-body">
+                            <div>
+                                <input type="radio" name="q5" value="0" id="q5-a">
+                                <label for="q5-a">true</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="q5" value="1" id="q5-b">
+                                <label for="q5-b">false</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="q5" value="0" id="q5-c">
+                                <label for="q5-c">undefined</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 mb-3">
+                    <div class="card">
+                        <div class="card-header">6. Mit csinál a következő CSS tulajdonság? `visibility: hidden;`</div>
+                        <div class="card-body">
+                            <div>
+                                <input type="radio" name="q6" value="1" id="q6-a">
+                                <label for="q6-a">Elrejti az elemet, de az helyet foglal.</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="q6" value="0" id="q6-b">
+                                <label for="q6-b">Teljesen eltünteti az elemet az oldalról.</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="q6" value="0" id="q6-c">
+                                <label for="q6-c">Az elem áttetszővé válik.</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 mb-3">
+                    <div class="card">
+                        <div class="card-header">7. Mi történik, ha egy elemre `position: absolute;` kerül?</div>
+                        <div class="card-body">
+                            <div>
+                                <input type="radio" name="q7" value="0" id="q7-a">
+                                <label for="q7-a">Az oldal tetejére kerül.</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="q7" value="1" id="q7-b">
+                                <label for="q7-b">A szülő elemhez viszonyítva pozicionálódik (ha van `relative`).</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="q7" value="0" id="q7-c">
+                                <label for="q7-c">Mindig az ablakhoz képest lesz pozicionálva.</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 mb-3">
+                    <div class="card">
+                        <div class="card-header">8. Mi történik egy HTML fájlban, ha hiányzik a `<!DOCTYPE html>` deklaráció?</div>
+                        <div class="card-body">
+                            <div>
+                                <input type="radio" name="q8" value="0" id="q8-a">
+                                <label for="q8-a">A böngésző nem tudja megjeleníteni az oldalt.</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="q8" value="1" id="q8-b">
+                                <label for="q8-b">A böngésző kompatibilitási módban jeleníti meg az oldalt.</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="q8" value="0" id="q8-c">
+                                <label for="q8-c">Semmi különös, minden ugyanúgy működik.</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 mb-3">
+                    <div class="card">
+                        <div class="card-header">9. Mi a különbség a `==` és a `===` között?</div>
+                        <div class="card-body">
+                            <div>
+                                <input type="radio" name="q9" value="0" id="q9-a">
+                                <label for="q9-a">Mindkettő azonos módon hasonlít össze értékeket.</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="q9" value="1" id="q9-b">
+                                <label for="q9-b">A `===` szigorúan ellenőrzi a típust is.</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="q9" value="0" id="q9-c">
+                                <label for="q9-c">A `==` csak számokat hasonlít össze.</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 mb-3">
+                    <div class="card">
+                        <div class="card-header">10. Mit csinál a következő kód? 'console.log(5 + "5");'</div>
+                       
+                        <div class="card-body">
+                            <div>
+                                <input type="radio" name="q10" value="0" id="q10-a">
+                                <label for="q10-a">10</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="q10" value="1" id="q10-b">
+                                <label for="q10-b">"55"</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="q10" value="0" id="q10-c">
+                                <label for="q10-c">TypeError</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <div class="card">
+                        <div class="card-header">11. Mi történik, ha egy változót `var`-ral deklarálsz egy függvényen belül?</div>
+                        <div class="card-body">
+                            <div>
+                                <input type="radio" name="q11" value="0" id="q11-a">
+                                <label for="q11-a">Globálisan elérhető lesz.</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="q11" value="1" id="q11-b">
+                                <label for="q11-b">Csak a függvényen belül érhető el.</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="q11" value="0" id="q11-c">
+                                <label for="q11-c">A blokkon kívül is elérhető lesz, ha nincs `strict mode`.</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 mb-3">
+                    <div class="card">
+                        <div class="card-header">12. Mi történik, ha egy elemre `display: none;` kerül?</div>
+                        <div class="card-body">
+                            <div>
+                                <input type="radio" name="q12" value="0" id="q12-a">
+                                <label for="q12-a">Az elem láthatatlanná válik, de helyet foglal.</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="q12" value="1" id="q12-b">
+                                <label for="q12-b">Az elem teljesen eltűnik az oldalról, mintha nem is létezne.</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="q12" value="0" id="q12-c">
+                                <label for="q12-c">Az elem csak kisebb lesz.</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 mb-3">
+                    <div class="card">
+                        <div class="card-header">13. Melyik CSS mértékegység NEM relatív?</div>
+                        <div class="card-body">
+                            <div>
+                                <input type="radio" name="q13" value="0" id="q13-a">
+                                <label for="q13-a">em</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="q13" value="0" id="q13-b">
+                                <label for="q13-b">rem</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="q13" value="1" id="q13-c">
+                                <label for="q13-c">px</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 mb-3">
+                    <div class="card">
+                        <div class="card-header">14. Mit ad vissza a következő JavaScript kifejezés? 'console.log([] + []);'</div>
+                        <div class="card-body">
+                            <div>
+                                <input type="radio" name="q14" value="0" id="q14-a">
+                                <label for="q14-a">TypeError</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="q14" value="1" id="q14-b">
+                                <label for="q14-b">"" (üres string)</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="q14" value="0" id="q14-c">
+                                <label for="q14-c">[] (üres tömb)</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 mb-3">
+                    <div class="card">
+                        <div class="card-header">15. Hogyan működik a `z-index` CSS-ben?</div>
+                        <div class="card-body">
+                            <div>
+                                <input type="radio" name="q15" value="0" id="q15-a">
+                                <label for="q15-a">Mindig az első elem kerül legfelülre.</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="q15" value="0" id="q15-b">
+                                <label for="q15-b">Nincs hatása a pozícionált elemekre.</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="q15" value="1" id="q15-c">
+                                <label for="q15-c">Az elemek egymásra helyezkedését szabályozza.</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+
+
+            </div>
+    </div>
+    </div>
+    </div>
+
+
+    <!-- Submit gomb -->
+    <button type="submit" id="submit-btn" class="btn btn-primary w-100 mt-3" disabled>Kiértékelés</button>
+    </form>
+
+    <!-- Eredmény -->
+    <div id="result" class="mt-4 text-center" style="display: none;">
+        <h2>Eredményed:</h2>
+        <p id="score"></p>
+    </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Saját script -->
+    <script src="script.js"></script>
+</body>
+
+</html>
